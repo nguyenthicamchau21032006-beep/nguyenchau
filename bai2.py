@@ -1,17 +1,8 @@
-from datetime import date
+def tinh_P2(n):
+    if n == 1:
+        return 2.0
+    
+    return tinh_P2(n - 1) * (1 + 1 / (n ** 2))
 
-print("Nhập ngày thứ nhất:")
-d1 = int(input("Ngày: "))
-m1 = int(input("Tháng: "))
-y1 = int(input("Năm: "))
-
-print("Nhập ngày thứ hai:")
-d2 = int(input("Ngày: "))
-m2 = int(input("Tháng: "))
-y2 = int(input("Năm: "))
-
-date_start = date(y1, m1, d1)
-date_end = date(y2, m2, d2)
-
-delta = abs(date_end - date_start)
-print(f"Số ngày cách nhau giữa 2 ngày là: {delta.days} ngày")
+if __name__ == "__main__":
+    print(f"Kết quả P(2): {tinh_P2(2):.4f}")
